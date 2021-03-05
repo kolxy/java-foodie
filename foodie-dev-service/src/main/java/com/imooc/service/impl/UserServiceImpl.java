@@ -46,7 +46,7 @@ public class UserServiceImpl implements UserService {
         user.setId(userId);
         user.setUsername(userBO.getUsername());
         try {
-            user.setPassword(MD5Utils.getMD5Str(user.getPassword()));
+            user.setPassword(MD5Utils.getMD5Str(userBO.getPassword()));
         } catch (Exception e) {
             e.printStackTrace();
         }
