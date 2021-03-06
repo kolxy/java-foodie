@@ -3,16 +3,20 @@ package com.imooc.controller;
 import com.imooc.pojo.bo.UserBO;
 import com.imooc.service.UserService;
 import com.imooc.utils.IMOOCJSONResult;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+@Api(value = "注册登录", tags = {"登录相关"})
 @RestController
 @RequestMapping("passport")
 public class PassportController {
     @Autowired
     private UserService userService;
 
+    @ApiOperation(value = "用户名是否存在", notes = "用户名是否存在", httpMethod = "GET")
     @GetMapping("/usernameIsExist")
     public IMOOCJSONResult usernameIsExist(@RequestParam String username) {
         // 不能为空
@@ -30,6 +34,7 @@ public class PassportController {
         return IMOOCJSONResult.ok();
     }
 
+    @ApiOperation(value = "注册", notes = "注册", httpMethod = "POST")
     @PostMapping("/register")
     public IMOOCJSONResult register(@RequestBody UserBO userBO) {
         String username = userBO.getUsername();
