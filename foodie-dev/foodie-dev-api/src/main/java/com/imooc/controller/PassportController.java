@@ -35,7 +35,7 @@ public class PassportController {
     }
 
     @ApiOperation(value = "注册", notes = "注册", httpMethod = "POST")
-    @PostMapping("/register")
+    @PostMapping("/regist")
     public IMOOCJSONResult register(@RequestBody UserBO userBO) {
         String username = userBO.getUsername();
         String password = userBO.getPassword();
