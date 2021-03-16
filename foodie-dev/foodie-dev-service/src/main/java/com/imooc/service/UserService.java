@@ -20,4 +20,11 @@ public interface UserService {
      */
     public Users createUser(UserBO userBO );
 
+    /**
+     * 减速哦用户名和密码是否匹配，用于登录
+     * @param username
+     * @param password
+     * @return
+     */
+    public Users queryUserForLogin(String username, String password);
 }
