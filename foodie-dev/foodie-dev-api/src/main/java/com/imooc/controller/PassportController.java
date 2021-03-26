@@ -90,6 +90,6 @@ public class PassportController {
             return IMOOCJSONResult.errorMsg("用户名或密码不存在");
         }
 
-        return IMOOCJSONResult.ok();
+        return IMOOCJSONResult.ok(userResult);
     }
 }
